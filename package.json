@@ -1,0 +1,7 @@
+{
+  "name": "notifyhub",
+  "version": "0.1.0",
+  "description": "Outbound notifications for BackIssue — Discord embeds with cover art, Telegram, Pushover, ntfy, and generic webhooks, each with per-category filters.",
+  "type": "module",
+  "license": "GPL-3.0-or-later"
+}

@@ -1,0 +1,38 @@
+/* Notifications hub — channel cards in Settings → Notifications.
+   Cards themselves are core .src-block; this only styles the hub's own
+   widgets (header status chip, category chips), from core's CSS variables. */
+
+/* Header status: quiet until configured, then a green-dotted "Active". */
+.nh-state {
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--faint);
+  padding: 3px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.nh-state.is-on { color: var(--text); border-color: var(--line); }
+.nh-state.is-on::before {
+  content: '';
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #5fd38a;
+  margin-right: 6px;
+  vertical-align: 1px;
+}
+
+/* Category filter: a labelled chip row. "All" active = no filtering. */
+.nh-cats { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.nh-cats__label { font-size: 12px; color: var(--muted); margin-right: 2px; }
+.nh-chip {
+  padding: 3px 10px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 11px;
+  cursor: pointer;
+}
+.nh-chip.is-active { background: var(--accent); border-color: var(--accent); color: #fff; }
