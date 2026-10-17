@@ -10,57 +10,65 @@
     if (!slot || slot.querySelector('#set-notifyDiscordUrl')) return;
     document.getElementById('notify-hub-empty-note')?.remove(); // the "not installed" hint
 
+    const esc = api.escapeHtml;
+    // Translations: api.t when the host has it (BackIssue > 0.9.0), the inline
+    // English otherwise. Catalog: locales/<lang>.json, namespace "notifyhub".
+    const fill = (s, p) => (p ? String(s).replace(/\{(\w+)\}/g, (m, k) => (p[k] === undefined || p[k] === null ? m : String(p[k]))) : String(s));
+    const tr = (key, en, params) => { if (typeof api.t !== 'function') return fill(en, params); const v = api.t('notifyhub.' + key, params); return v === 'notifyhub.' + key ? fill(en, params) : v; };
+    const trh = (key, en, params) => (typeof api.th === 'function' && api.t('notifyhub.' + key) !== 'notifyhub.' + key ? api.th('notifyhub.' + key, params) : fill(en, params));
+    const te = (key, en, params) => esc(tr(key, en, params)); // for innerHTML
+
     // Mirrors core's notification categories (src/notifications.js CATEGORIES).
     const CATS = [
-      ['import', 'Imports'], ['failure', 'Failures'], ['release', 'Releases'],
-      ['request', 'Requests'], ['system', 'System'],
+      ['import', te('cats.import', 'Imports')], ['failure', te('cats.failure', 'Failures')], ['release', te('cats.release', 'Releases')],
+      ['request', te('cats.request', 'Requests')], ['system', te('cats.system', 'System')],
     ];
     const CHANNELS = [
       {
         id: 'discord', name: 'Discord', events: 'notifyDiscordEvents',
         need: ['notifyDiscordUrl'],
-        blurb: 'Rich embeds — level color, category, and cover art.',
+        blurb: te('discord.blurb', 'Rich embeds — level color, category, and cover art.'),
         fields:
-          '<label class="field"><span>Webhook URL</span><input id="set-notifyDiscordUrl" type="text" spellcheck="false" placeholder="https://discord.com/api/webhooks/…"></label>' +
-          '<p class="modal__note">Server Settings → Integrations → Webhooks → New Webhook, then copy its URL. Events with a series attached include the cover as a thumbnail.</p>',
+          '<label class="field"><span>' + te('discord.url', 'Webhook URL') + '</span><input id="set-notifyDiscordUrl" type="text" spellcheck="false" placeholder="https://discord.com/api/webhooks/…"></label>' +
+          '<p class="modal__note">' + te('discord.note', 'Server Settings → Integrations → Webhooks → New Webhook, then copy its URL. Events with a series attached include the cover as a thumbnail.') + '</p>',
       },
       {
         id: 'telegram', name: 'Telegram', events: 'notifyTelegramEvents',
         need: ['notifyTelegramToken', 'notifyTelegramChat'],
-        blurb: 'Messages from your own bot, to a chat or group.',
+        blurb: te('telegram.blurb', 'Messages from your own bot, to a chat or group.'),
         fields:
           '<div class="fields-row">' +
-            '<label class="field"><span>Bot token</span><input id="set-notifyTelegramToken" type="password" spellcheck="false" autocomplete="new-password" placeholder="123456:ABC-…"></label>' +
-            '<label class="field"><span>Chat ID</span><input id="set-notifyTelegramChat" type="text" spellcheck="false" placeholder="-1001234567890"></label>' +
+            '<label class="field"><span>' + te('telegram.token', 'Bot token') + '</span><input id="set-notifyTelegramToken" type="password" spellcheck="false" autocomplete="new-password" placeholder="123456:ABC-…"></label>' +
+            '<label class="field"><span>' + te('telegram.chat', 'Chat ID') + '</span><input id="set-notifyTelegramChat" type="text" spellcheck="false" placeholder="-1001234567890"></label>' +
           '</div>' +
-          '<p class="modal__note">Create a bot with <b>@BotFather</b> (it gives you the token); get your chat ID from <b>@userinfobot</b>, or a group\'s ID from its invite/info.</p>',
+          '<p class="modal__note">' + trh('telegram.note', 'Create a bot with <b>@BotFather</b> (it gives you the token); get your chat ID from <b>@userinfobot</b>, or a group\'s ID from its invite/info.') + '</p>',
       },
       {
         id: 'pushover', name: 'Pushover', events: 'notifyPushoverEvents',
         need: ['notifyPushoverToken', 'notifyPushoverUser'],
-        blurb: 'Push notifications to your phone or desktop.',
+        blurb: te('pushover.blurb', 'Push notifications to your phone or desktop.'),
         fields:
           '<div class="fields-row">' +
-            '<label class="field"><span>App token</span><input id="set-notifyPushoverToken" type="password" spellcheck="false" autocomplete="new-password"></label>' +
-            '<label class="field"><span>User key</span><input id="set-notifyPushoverUser" type="text" spellcheck="false"></label>' +
+            '<label class="field"><span>' + te('pushover.token', 'App token') + '</span><input id="set-notifyPushoverToken" type="password" spellcheck="false" autocomplete="new-password"></label>' +
+            '<label class="field"><span>' + te('pushover.user', 'User key') + '</span><input id="set-notifyPushoverUser" type="text" spellcheck="false"></label>' +
           '</div>' +
-          '<p class="modal__note">Create an application at pushover.net to get the app token; the user key is on your dashboard. Errors arrive as high-priority.</p>',
+          '<p class="modal__note">' + te('pushover.note', 'Create an application at pushover.net to get the app token; the user key is on your dashboard. Errors arrive as high-priority.') + '</p>',
       },
       {
         id: 'ntfy', name: 'ntfy', events: 'notifyNtfyEvents',
         need: ['notifyNtfyUrl'],
-        blurb: 'Simple pub-sub push — self-hosted or ntfy.sh.',
+        blurb: te('ntfy.blurb', 'Simple pub-sub push — self-hosted or ntfy.sh.'),
         fields:
-          '<label class="field"><span>Topic URL</span><input id="set-notifyNtfyUrl" type="text" spellcheck="false" placeholder="https://ntfy.sh/my-backissue-topic"></label>' +
-          '<p class="modal__note">The full URL of your topic. Subscribe to the same topic in the ntfy app; pick something unguessable on the public server.</p>',
+          '<label class="field"><span>' + te('ntfy.url', 'Topic URL') + '</span><input id="set-notifyNtfyUrl" type="text" spellcheck="false" placeholder="https://ntfy.sh/my-backissue-topic"></label>' +
+          '<p class="modal__note">' + te('ntfy.note', 'The full URL of your topic. Subscribe to the same topic in the ntfy app; pick something unguessable on the public server.') + '</p>',
       },
       {
         id: 'webhook', name: 'Webhook', events: 'notifyWebhookEvents',
         need: ['notifyWebhookUrl'],
-        blurb: 'Plain JSON POST to any URL you run.',
+        blurb: te('webhook.blurb', 'Plain JSON POST to any URL you run.'),
         fields:
-          '<label class="field"><span>Webhook URL</span><input id="set-notifyWebhookUrl" type="text" spellcheck="false" placeholder="https://example.com/hook"></label>' +
-          '<p class="modal__note">POSTs <code>{ content, type, category, level, title, body, url }</code> per event. Settings carried over from the old built-in webhook.</p>',
+          '<label class="field"><span>' + te('webhook.url', 'Webhook URL') + '</span><input id="set-notifyWebhookUrl" type="text" spellcheck="false" placeholder="https://example.com/hook"></label>' +
+          '<p class="modal__note">' + trh('webhook.note', 'POSTs <code>{ content, type, category, level, title, body, url }</code> per event. Settings carried over from the old built-in webhook.') + '</p>',
       },
     ];
 
@@ -80,13 +88,13 @@
         '<div class="src-config">' +
           c.fields +
           '<div class="nh-cats" data-nh-cats="' + c.events + '">' +
-            '<span class="nh-cats__label">Send for</span>' +
-            '<button type="button" class="nh-chip" data-cat="">All</button>' +
+            '<span class="nh-cats__label">' + te('sendFor', 'Send for') + '</span>' +
+            '<button type="button" class="nh-chip" data-cat="">' + te('cats.all', 'All') + '</button>' +
             CATS.map(([k, label]) => '<button type="button" class="nh-chip" data-cat="' + k + '">' + label + '</button>').join('') +
             '<input type="hidden" id="set-' + c.events + '">' +
           '</div>' +
           '<div class="client-test">' +
-            '<button type="button" class="btn btn--ghost" data-nh-test="' + c.id + '">Send test</button>' +
+            '<button type="button" class="btn btn--ghost" data-nh-test="' + c.id + '">' + te('sendTest', 'Send test') + '</button>' +
             '<span class="client-status" data-nh-result="' + c.id + '" hidden></span>' +
           '</div>' +
         '</div>' +
@@ -99,7 +107,7 @@
       for (const c of CHANNELS) {
         const on = c.need.every((k) => (document.getElementById('set-' + k)?.value || '').trim());
         const el = wrap.querySelector('[data-nh-state="' + c.id + '"]');
-        el.textContent = on ? 'Active' : 'Not set up';
+        el.textContent = on ? tr('state.active', 'Active') : tr('state.notSetUp', 'Not set up');
         el.classList.toggle('is-on', on);
       }
     }
@@ -146,14 +154,14 @@
       btn.addEventListener('click', async () => {
         const c = CHANNELS.find((x) => x.id === btn.dataset.nhTest);
         const out = wrap.querySelector('[data-nh-result="' + c.id + '"]');
-        out.hidden = false; out.textContent = 'Sending…'; out.className = 'client-status is-testing';
+        out.hidden = false; out.textContent = tr('test.sending', 'Sending…'); out.className = 'client-status is-testing';
         const body = { channel: c.id };
         for (const k of c.need) body[k] = document.getElementById('set-' + k)?.value || '';
         let r;
         try { r = await api.post('/api/notifyhub/test', body); }
         catch (e) { r = { ok: false, error: String(e) }; }
-        out.innerHTML = (r.ok ? api.icon('check') + ' Sent — check the channel.'
-                              : api.icon('close') + ' ' + api.escapeHtml(r.error || 'Failed'));
+        out.innerHTML = (r.ok ? api.icon('check') + ' ' + te('test.sent', 'Sent — check the channel.')
+                              : api.icon('close') + ' ' + esc(r.error || tr('test.failed', 'Failed')));
         out.className = 'client-status ' + (r.ok ? 'is-ok' : 'is-bad');
       });
     }

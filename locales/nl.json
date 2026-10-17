@@ -1,0 +1,48 @@
+{
+  "sendFor": "Versturen bij",
+  "sendTest": "Test versturen",
+  "cats": {
+    "all": "Alles",
+    "import": "Imports",
+    "failure": "Fouten",
+    "release": "Nieuwe uitgaven",
+    "request": "Verzoeken",
+    "system": "Systeem"
+  },
+  "state": {
+    "active": "Actief",
+    "notSetUp": "Niet ingesteld"
+  },
+  "test": {
+    "sending": "Versturen…",
+    "sent": "Verstuurd; kijk in het kanaal.",
+    "failed": "Mislukt"
+  },
+  "discord": {
+    "blurb": "Rijke embeds met levelkleur, categorie en cover.",
+    "url": "Webhook-URL",
+    "note": "Serverinstellingen → Integraties → Webhooks → Nieuwe webhook, kopieer daarna de URL. Gebeurtenissen met een reeks tonen de cover als miniatuur."
+  },
+  "telegram": {
+    "blurb": "Berichten van je eigen bot naar een chat of groep.",
+    "token": "Bot-token",
+    "chat": "Chat-ID",
+    "note": "Maak een bot met <b>@BotFather</b> (die geeft het token); je chat-ID krijg je van <b>@userinfobot</b>, het ID van een groep staat in de uitnodiging/info."
+  },
+  "pushover": {
+    "blurb": "Pushmeldingen op je telefoon of computer.",
+    "token": "App-token",
+    "user": "Gebruikerssleutel",
+    "note": "Maak een applicatie aan op pushover.net voor het app-token; de gebruikerssleutel staat op je dashboard. Fouten komen binnen met hoge prioriteit."
+  },
+  "ntfy": {
+    "blurb": "Eenvoudige pub-sub-push, zelf gehost of via ntfy.sh.",
+    "url": "Topic-URL",
+    "note": "De volledige URL van je topic. Abonneer je op hetzelfde topic in de ntfy-app; kies op de openbare server iets wat niet te raden is."
+  },
+  "webhook": {
+    "blurb": "Kale JSON-POST naar een URL van jezelf.",
+    "url": "Webhook-URL",
+    "note": "POST per gebeurtenis <code>{ content, type, category, level, title, body, url }</code>. Instellingen overgenomen van de oude ingebouwde webhook."
+  }
+}

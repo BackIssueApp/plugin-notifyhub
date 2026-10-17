@@ -1,0 +1,48 @@
+{
+  "sendFor": "Envoyer pour",
+  "sendTest": "Envoyer un test",
+  "cats": {
+    "all": "Tout",
+    "import": "Imports",
+    "failure": "Échecs",
+    "release": "Sorties",
+    "request": "Demandes",
+    "system": "Système"
+  },
+  "state": {
+    "active": "Actif",
+    "notSetUp": "Non configuré"
+  },
+  "test": {
+    "sending": "Envoi…",
+    "sent": "Envoyé ; vérifiez le canal.",
+    "failed": "Échec"
+  },
+  "discord": {
+    "blurb": "Embeds enrichis : couleur du niveau, catégorie et couverture.",
+    "url": "URL du webhook",
+    "note": "Paramètres du serveur → Intégrations → Webhooks → Nouveau webhook, puis copiez son URL. Les événements liés à une série incluent la couverture en vignette."
+  },
+  "telegram": {
+    "blurb": "Messages de votre propre bot, vers une discussion ou un groupe.",
+    "token": "Jeton du bot",
+    "chat": "ID de discussion",
+    "note": "Créez un bot avec <b>@BotFather</b> (il vous donne le jeton) ; obtenez votre ID de discussion via <b>@userinfobot</b>, ou l’ID d’un groupe dans son invitation/ses infos."
+  },
+  "pushover": {
+    "blurb": "Notifications push sur votre téléphone ou ordinateur.",
+    "token": "Jeton d’application",
+    "user": "Clé utilisateur",
+    "note": "Créez une application sur pushover.net pour obtenir le jeton ; la clé utilisateur est sur votre tableau de bord. Les erreurs arrivent en priorité haute."
+  },
+  "ntfy": {
+    "blurb": "Push pub-sub simple, auto-hébergé ou via ntfy.sh.",
+    "url": "URL du sujet",
+    "note": "L’URL complète de votre sujet. Abonnez-vous au même sujet dans l’application ntfy ; choisissez un nom impossible à deviner sur le serveur public."
+  },
+  "webhook": {
+    "blurb": "Simple POST JSON vers une URL que vous gérez.",
+    "url": "URL du webhook",
+    "note": "Envoie en POST <code>{ content, type, category, level, title, body, url }</code> à chaque événement. Paramètres repris de l’ancien webhook intégré."
+  }
+}

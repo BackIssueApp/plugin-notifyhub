@@ -1,0 +1,48 @@
+{
+  "sendFor": "Send for",
+  "sendTest": "Send test",
+  "cats": {
+    "all": "All",
+    "import": "Imports",
+    "failure": "Failures",
+    "release": "Releases",
+    "request": "Requests",
+    "system": "System"
+  },
+  "state": {
+    "active": "Active",
+    "notSetUp": "Not set up"
+  },
+  "test": {
+    "sending": "Sending…",
+    "sent": "Sent — check the channel.",
+    "failed": "Failed"
+  },
+  "discord": {
+    "blurb": "Rich embeds — level color, category, and cover art.",
+    "url": "Webhook URL",
+    "note": "Server Settings → Integrations → Webhooks → New Webhook, then copy its URL. Events with a series attached include the cover as a thumbnail."
+  },
+  "telegram": {
+    "blurb": "Messages from your own bot, to a chat or group.",
+    "token": "Bot token",
+    "chat": "Chat ID",
+    "note": "Create a bot with <b>@BotFather</b> (it gives you the token); get your chat ID from <b>@userinfobot</b>, or a group's ID from its invite/info."
+  },
+  "pushover": {
+    "blurb": "Push notifications to your phone or desktop.",
+    "token": "App token",
+    "user": "User key",
+    "note": "Create an application at pushover.net to get the app token; the user key is on your dashboard. Errors arrive as high-priority."
+  },
+  "ntfy": {
+    "blurb": "Simple pub-sub push — self-hosted or ntfy.sh.",
+    "url": "Topic URL",
+    "note": "The full URL of your topic. Subscribe to the same topic in the ntfy app; pick something unguessable on the public server."
+  },
+  "webhook": {
+    "blurb": "Plain JSON POST to any URL you run.",
+    "url": "Webhook URL",
+    "note": "POSTs <code>{ content, type, category, level, title, body, url }</code> per event. Settings carried over from the old built-in webhook."
+  }
+}

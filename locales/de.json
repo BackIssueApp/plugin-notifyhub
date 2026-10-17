@@ -1,0 +1,48 @@
+{
+  "sendFor": "Senden bei",
+  "sendTest": "Test senden",
+  "cats": {
+    "all": "Alle",
+    "import": "Importe",
+    "failure": "Fehler",
+    "release": "Neuerscheinungen",
+    "request": "Anfragen",
+    "system": "System"
+  },
+  "state": {
+    "active": "Aktiv",
+    "notSetUp": "Nicht eingerichtet"
+  },
+  "test": {
+    "sending": "Wird gesendet …",
+    "sent": "Gesendet; im Kanal nachsehen.",
+    "failed": "Fehlgeschlagen"
+  },
+  "discord": {
+    "blurb": "Reichhaltige Embeds mit Levelfarbe, Kategorie und Cover.",
+    "url": "Webhook-URL",
+    "note": "Servereinstellungen → Integrationen → Webhooks → Neuer Webhook, dann die URL kopieren. Ereignisse mit Reihe zeigen das Cover als Vorschaubild."
+  },
+  "telegram": {
+    "blurb": "Nachrichten vom eigenen Bot an einen Chat oder eine Gruppe.",
+    "token": "Bot-Token",
+    "chat": "Chat-ID",
+    "note": "Einen Bot mit <b>@BotFather</b> anlegen (liefert das Token); die eigene Chat-ID gibt <b>@userinfobot</b>, die einer Gruppe steht in Einladung/Info."
+  },
+  "pushover": {
+    "blurb": "Push-Benachrichtigungen auf Telefon oder Desktop.",
+    "token": "App-Token",
+    "user": "Benutzerschlüssel",
+    "note": "Auf pushover.net eine Anwendung anlegen, um das App-Token zu erhalten; der Benutzerschlüssel steht im Dashboard. Fehler kommen mit hoher Priorität an."
+  },
+  "ntfy": {
+    "blurb": "Einfaches Pub/Sub-Push, selbst gehostet oder über ntfy.sh.",
+    "url": "Topic-URL",
+    "note": "Die vollständige URL des Topics. Dasselbe Topic in der ntfy-App abonnieren; auf dem öffentlichen Server etwas Unerratbares wählen."
+  },
+  "webhook": {
+    "blurb": "Schlichter JSON-POST an eine eigene URL.",
+    "url": "Webhook-URL",
+    "note": "Sendet pro Ereignis <code>{ content, type, category, level, title, body, url }</code> per POST. Einstellungen vom alten eingebauten Webhook übernommen."
+  }
+}

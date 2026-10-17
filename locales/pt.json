@@ -1,0 +1,48 @@
+{
+  "sendFor": "Enviar para",
+  "sendTest": "Enviar teste",
+  "cats": {
+    "all": "Tudo",
+    "import": "Importações",
+    "failure": "Falhas",
+    "release": "Lançamentos",
+    "request": "Pedidos",
+    "system": "Sistema"
+  },
+  "state": {
+    "active": "Ativo",
+    "notSetUp": "Por configurar"
+  },
+  "test": {
+    "sending": "A enviar…",
+    "sent": "Enviado; verifique o canal.",
+    "failed": "Falhou"
+  },
+  "discord": {
+    "blurb": "Embeds ricos: cor do nível, categoria e capa.",
+    "url": "URL do webhook",
+    "note": "Definições do servidor → Integrações → Webhooks → Novo webhook, depois copie o URL. Os eventos com série associada incluem a capa como miniatura."
+  },
+  "telegram": {
+    "blurb": "Mensagens do seu próprio bot para uma conversa ou grupo.",
+    "token": "Token do bot",
+    "chat": "ID da conversa",
+    "note": "Crie um bot com o <b>@BotFather</b> (dá-lhe o token); obtenha o seu ID de conversa com o <b>@userinfobot</b>, ou o ID de um grupo no convite/informações."
+  },
+  "pushover": {
+    "blurb": "Notificações push no telemóvel ou no computador.",
+    "token": "Token da aplicação",
+    "user": "Chave de utilizador",
+    "note": "Crie uma aplicação em pushover.net para obter o token; a chave de utilizador está no seu painel. Os erros chegam com prioridade alta."
+  },
+  "ntfy": {
+    "blurb": "Push pub-sub simples, auto-hospedado ou em ntfy.sh.",
+    "url": "URL do tópico",
+    "note": "O URL completo do seu tópico. Subscreva o mesmo tópico na app ntfy; no servidor público escolha algo impossível de adivinhar."
+  },
+  "webhook": {
+    "blurb": "POST JSON simples para um URL seu.",
+    "url": "URL do webhook",
+    "note": "Envia por POST <code>{ content, type, category, level, title, body, url }</code> por evento. Definições herdadas do antigo webhook integrado."
+  }
+}
