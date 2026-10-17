@@ -164,6 +164,7 @@ export default function register(api) {
       type: 'test', category: 'system', level: 'info',
       title: 'BackIssue test notification',
       body: `The ${channel} channel is working.`,
+      params: { channel },
       url: null, userId: null, seriesId: null,
     };
     try {

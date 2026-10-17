@@ -44,5 +44,18 @@
     "blurb": "Schlichter JSON-POST an eine eigene URL.",
     "url": "Webhook-URL",
     "note": "Sendet pro Ereignis <code>{ content, type, category, level, title, body, url }</code> per POST. Einstellungen vom alten eingebauten Webhook übernommen."
+  },
+  "_shared": {
+    "plugins": {
+      "notifyhub": {
+        "description": "Ausgehende Benachrichtigungen für BackIssue — Discord-Embeds mit Cover, Telegram, Pushover, ntfy und generische Webhooks, jeweils mit Filtern pro Kategorie."
+      }
+    },
+    "notifications": {
+      "test": {
+        "title": "BackIssue-Testbenachrichtigung",
+        "body": "Der Kanal {channel} funktioniert."
+      }
+    }
   }
 }

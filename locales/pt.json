@@ -44,5 +44,18 @@
     "blurb": "POST JSON simples para um URL seu.",
     "url": "URL do webhook",
     "note": "Envia por POST <code>{ content, type, category, level, title, body, url }</code> por evento. Definições herdadas do antigo webhook integrado."
+  },
+  "_shared": {
+    "plugins": {
+      "notifyhub": {
+        "description": "Notificações de saída para o BackIssue: embeds do Discord com capa, Telegram, Pushover, ntfy e webhooks genéricos, cada um com filtros por categoria."
+      }
+    },
+    "notifications": {
+      "test": {
+        "title": "Notificação de teste do BackIssue",
+        "body": "O canal {channel} está a funcionar."
+      }
+    }
   }
 }

@@ -44,5 +44,18 @@
     "blurb": "Kale JSON-POST naar een URL van jezelf.",
     "url": "Webhook-URL",
     "note": "POST per gebeurtenis <code>{ content, type, category, level, title, body, url }</code>. Instellingen overgenomen van de oude ingebouwde webhook."
+  },
+  "_shared": {
+    "plugins": {
+      "notifyhub": {
+        "description": "Uitgaande meldingen voor BackIssue: Discord-embeds met cover, Telegram, Pushover, ntfy en generieke webhooks, elk met filters per categorie."
+      }
+    },
+    "notifications": {
+      "test": {
+        "title": "BackIssue-testmelding",
+        "body": "Het kanaal {channel} werkt."
+      }
+    }
   }
 }
