@@ -1,0 +1,61 @@
+{
+  "sendFor": "Wysyłaj dla",
+  "sendTest": "Wyślij test",
+  "cats": {
+    "all": "Wszystkie",
+    "import": "Importy",
+    "failure": "Błędy",
+    "release": "Wydania",
+    "request": "Prośby",
+    "system": "System"
+  },
+  "state": {
+    "active": "Aktywny",
+    "notSetUp": "Nieskonfigurowany"
+  },
+  "test": {
+    "sending": "Wysyłanie…",
+    "sent": "Wysłano — sprawdź kanał.",
+    "failed": "Niepowodzenie"
+  },
+  "discord": {
+    "blurb": "Rozbudowane osadzenia — kolor poziomu, kategoria i okładka.",
+    "url": "Adres webhooka",
+    "note": "Ustawienia serwera → Integracje → Webhooki → Nowy webhook, a następnie skopiuj jego adres. Zdarzenia powiązane z serią zawierają okładkę jako miniaturę."
+  },
+  "telegram": {
+    "blurb": "Wiadomości od twojego własnego bota do czatu lub grupy.",
+    "token": "Token bota",
+    "chat": "Identyfikator czatu",
+    "note": "Utwórz bota przez <b>@BotFather</b> (poda ci token); identyfikator czatu uzyskasz od <b>@userinfobot</b>, a identyfikator grupy z jej zaproszenia lub informacji."
+  },
+  "pushover": {
+    "blurb": "Powiadomienia push na telefon lub komputer.",
+    "token": "Token aplikacji",
+    "user": "Klucz użytkownika",
+    "note": "Utwórz aplikację na pushover.net, aby otrzymać token aplikacji; klucz użytkownika jest na twoim pulpicie. Błędy przychodzą z wysokim priorytetem."
+  },
+  "ntfy": {
+    "blurb": "Prosty push typu publikuj-subskrybuj — na własnym serwerze lub ntfy.sh.",
+    "url": "Adres tematu",
+    "note": "Pełny adres twojego tematu. Zasubskrybuj ten sam temat w aplikacji ntfy; na publicznym serwerze wybierz nazwę trudną do odgadnięcia."
+  },
+  "webhook": {
+    "blurb": "Zwykły JSON wysyłany metodą POST na dowolny twój adres.",
+    "url": "Adres webhooka",
+    "note": "Wysyła <code>{ content, type, category, level, title, body, url }</code> dla każdego zdarzenia. Ustawienia przeniesione ze starego wbudowanego webhooka."
+  },
+  "_shared": {
+    "plugins": {
+      "notifyhub": {
+        "description": "Powiadomienia wychodzące BackIssue — osadzenia Discord z okładkami, Telegram, Pushover, ntfy i ogólne webhooki, każdy z filtrami według kategorii."
+      }
+    },
+    "notifications": {
+      "test": {
+        "title": "Powiadomienie testowe BackIssue",
+        "body": "Kanał {channel} działa."
+      }
+    }
+  }
+}

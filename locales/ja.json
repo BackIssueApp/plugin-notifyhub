@@ -1,0 +1,61 @@
+{
+  "sendFor": "送信する内容",
+  "sendTest": "テストを送信",
+  "cats": {
+    "all": "すべて",
+    "import": "取り込み",
+    "failure": "失敗",
+    "release": "新刊",
+    "request": "リクエスト",
+    "system": "システム"
+  },
+  "state": {
+    "active": "有効",
+    "notSetUp": "未設定"
+  },
+  "test": {
+    "sending": "送信中…",
+    "sent": "送信しました。チャンネルを確認してください。",
+    "failed": "失敗しました"
+  },
+  "discord": {
+    "blurb": "リッチな埋め込み（レベル別の色、カテゴリ、表紙画像）。",
+    "url": "Webhook URL",
+    "note": "サーバー設定 → 連携サービス → ウェブフック → 新しいウェブフック で作成し、URL をコピーしてください。シリーズに関連するイベントには表紙がサムネイルとして付きます。"
+  },
+  "telegram": {
+    "blurb": "自分のボットからチャットやグループにメッセージを送ります。",
+    "token": "ボットトークン",
+    "chat": "チャット ID",
+    "note": "<b>@BotFather</b> でボットを作成してください（トークンが発行されます）。チャット ID は <b>@userinfobot</b> から、グループの ID は招待リンクやグループ情報から取得できます。"
+  },
+  "pushover": {
+    "blurb": "スマートフォンやデスクトップへのプッシュ通知。",
+    "token": "アプリトークン",
+    "user": "ユーザーキー",
+    "note": "pushover.net でアプリケーションを作成するとアプリトークンが得られます。ユーザーキーはダッシュボードにあります。エラーは高優先度で届きます。"
+  },
+  "ntfy": {
+    "blurb": "シンプルな Pub/Sub 型プッシュ（セルフホストまたは ntfy.sh）。",
+    "url": "トピック URL",
+    "note": "トピックの完全な URL です。ntfy アプリで同じトピックを購読してください。公開サーバーでは推測されにくい名前を選んでください。"
+  },
+  "webhook": {
+    "blurb": "任意の URL へのプレーンな JSON POST。",
+    "url": "Webhook URL",
+    "note": "イベントごとに <code>{ content, type, category, level, title, body, url }</code> を POST します。設定は以前の内蔵 Webhook から引き継がれています。"
+  },
+  "_shared": {
+    "plugins": {
+      "notifyhub": {
+        "description": "BackIssue の外部通知：表紙付きの Discord 埋め込み、Telegram、Pushover、ntfy、汎用 Webhook。それぞれカテゴリ別のフィルターに対応します。"
+      }
+    },
+    "notifications": {
+      "test": {
+        "title": "BackIssue のテスト通知",
+        "body": "{channel} チャンネルは正常に動作しています。"
+      }
+    }
+  }
+}

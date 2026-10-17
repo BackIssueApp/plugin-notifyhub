@@ -1,0 +1,61 @@
+{
+  "sendFor": "发送类别",
+  "sendTest": "发送测试",
+  "cats": {
+    "all": "全部",
+    "import": "导入",
+    "failure": "失败",
+    "release": "新刊",
+    "request": "请求",
+    "system": "系统"
+  },
+  "state": {
+    "active": "已启用",
+    "notSetUp": "未设置"
+  },
+  "test": {
+    "sending": "发送中…",
+    "sent": "已发送——请检查该频道。",
+    "failed": "失败"
+  },
+  "discord": {
+    "blurb": "富嵌入消息——按级别着色，含分类和封面。",
+    "url": "Webhook 地址",
+    "note": "服务器设置 → 整合 → Webhook → 新 Webhook，然后复制其地址。关联系列的事件会附带封面缩略图。"
+  },
+  "telegram": {
+    "blurb": "由你自己的机器人发送到聊天或群组。",
+    "token": "机器人令牌",
+    "chat": "聊天 ID",
+    "note": "用 <b>@BotFather</b> 创建机器人（它会给你令牌）；从 <b>@userinfobot</b> 获取你的聊天 ID，群组 ID 可从邀请链接或群组信息中获取。"
+  },
+  "pushover": {
+    "blurb": "推送通知到手机或电脑。",
+    "token": "应用令牌",
+    "user": "用户密钥",
+    "note": "在 pushover.net 创建应用以获取应用令牌；用户密钥在你的控制面板中。错误会以高优先级推送。"
+  },
+  "ntfy": {
+    "blurb": "简单的发布-订阅推送——自建或使用 ntfy.sh。",
+    "url": "主题地址",
+    "note": "主题的完整地址。在 ntfy 应用中订阅同一主题；在公共服务器上请选择难以猜到的名称。"
+  },
+  "webhook": {
+    "blurb": "向你自己的任意地址发送普通 JSON POST。",
+    "url": "Webhook 地址",
+    "note": "每个事件 POST 一次 <code>{ content, type, category, level, title, body, url }</code>。设置沿用自旧版内置 Webhook。"
+  },
+  "_shared": {
+    "plugins": {
+      "notifyhub": {
+        "description": "BackIssue 的外发通知——带封面的 Discord 嵌入、Telegram、Pushover、ntfy 和通用 Webhook，均可按分类筛选。"
+      }
+    },
+    "notifications": {
+      "test": {
+        "title": "BackIssue 测试通知",
+        "body": "{channel} 频道工作正常。"
+      }
+    }
+  }
+}
